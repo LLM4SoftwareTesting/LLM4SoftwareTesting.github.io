@@ -118,32 +118,26 @@
         /></a>
       </div>
       <div class="btn-group" role="group" id="Benchmark">
-        <input
-          type="radio"
-          class="btn-check"
-          name="btnradio"
-          id="Overall"
-          checked
-        />
+        <input type="radio" class="btn-check" name="btnradio" id="Overall" checked/>
         <label class="btn btn-outline-primary" for="Overall">Overall</label>
-        <input type="radio" class="btn-check" name="btnradio" id="Target" />
+        <input type="radio" class="btn-check" name="btnradio" id="Target"/>
         <label class="btn btn-outline-primary" for="Target">Target</label>
       </div>
       <div id="chart" style="width: 100%; height: 600px"></div>
       <div class="container-fluid d-flex flex-row flex-nowrap">
         <div class="container-fluid d-flex flex-column align-items-center">
-          <label for="plused" class="text-success mb-3"
+          <label for="branch" class="text-success mb-3"
             >Branch</label
           >
           <table
-            id="plused"
+            id="branch"
             class="table table-responsive table-striped table-bordered flex-shrink-1 border border-success border-3"
           ></table>
         </div>
         <div class="container-fluid d-flex flex-column align-items-center">
-          <label for="origin" class="text-danger mb-3">Line</label>
+          <label for="line" class="text-danger mb-3">Line</label>
           <table
-            id="origin"
+            id="line"
             class="table table-responsive table-striped table-bordered flex-shrink-1 border border-danger border-3"
           ></table>
         </div>
@@ -241,8 +235,8 @@
     </div>
 
     <script>
-      const originTable = document.getElementById("origin");
-      const plusedTable = document.getElementById("plused");
+      const lineTable = document.getElementById("line");
+      const branchTable = document.getElementById("branch");
       const benchmarkRadio = document.getElementById("Benchmark");
       const chartDom = document.getElementById("chart");
       var chart = echarts.init(chartDom);
@@ -287,8 +281,8 @@
       const globalData = data;
 
       const clearTable = () => {
-        originTable.innerHTML = "";
-        plusedTable.innerHTML = "";
+        lineTable.innerHTML = "";
+        branchTable.innerHTML = "";
       };
 
       const clearChart = () => {
@@ -406,6 +400,12 @@
 
       // score: 'average', 'humaneval', 'mbpp', 'humaneval+', 'mbpp+'
       const displayTable = (table, type, score) => {
+        if (type === "overall") {
+          table.style.fontSize = "75%";
+        }
+        else {
+          table.style.fontSize = "100%";
+        }
         let theaders = ["Model", "Target Coverage"];
         let subTheaders = ["k=1", "k=2", "k=5"];
         if (type !== "target") {
@@ -504,18 +504,18 @@
           dataRow.appendChild(modelCell);
           if (type === "overall") {
             var passCell = document.createElement("td");
-            if (table == originTable) {
+            if (table == lineTable) {
               passCell.classList.add("text-danger");
-            } else if (table == plusedTable) {
+            } else if (table == branchTable) {
               passCell.classList.add("text-success");
             }
             passCell.textContent += row[type][score];
             dataRow.appendChild(passCell);
             subTheaders.forEach(function (k) {
               var passCell = document.createElement("td");
-              if (table == originTable) {
+              if (table == lineTable) {
                 passCell.classList.add("text-danger");
-              } else if (table == plusedTable) {
+              } else if (table == branchTable) {
                 passCell.classList.add("text-success");
               }
               passCell.textContent += row[type+"@k"][score][k.split("=").slice(-1)];
@@ -524,9 +524,9 @@
           }
           else {
             var passCell = document.createElement("td");
-            if (table == originTable) {
+            if (table == lineTable) {
               passCell.classList.add("text-danger");
-            } else if (table == plusedTable) {
+            } else if (table == branchTable) {
               passCell.classList.add("text-success");
             }
             passCell.textContent += row[type][score];
@@ -631,16 +631,16 @@
 
       overallRadio.addEventListener("click", function () {
         clearTable();
-        displayTable(originTable, "overall", "line");
-        displayTable(plusedTable, "overall", "branch");
+        displayTable(lineTable, "overall", "line");
+        displayTable(branchTable, "overall", "branch");
         clearChart();
         displayChart("overall", "branch");
       });
 
       targetRadio.addEventListener("click", function () {
         clearTable();
-        displayTable(originTable, "target", "line");
-        displayTable(plusedTable, "target", "branch");
+        displayTable(lineTable, "target", "line");
+        displayTable(branchTable, "target", "branch");
         clearChart();
         displayChart("target", "branch");
       });

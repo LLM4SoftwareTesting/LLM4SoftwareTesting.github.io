@@ -22,6 +22,10 @@
       "line": 67.76,
       "branch": 70.40
     },
+    "baseline": {
+      "line": 69.03,
+      "branch": 66.02
+    },
     "prompted": true,
     "size": null
   },
@@ -47,6 +51,10 @@
     "target": {
       "line": 78.20,
       "branch": 78.23
+    },
+    "baseline": {
+      "line": 68.06,
+      "branch": 64.90
     },
     "prompted": true,
     "size": null
@@ -74,6 +82,10 @@
       "line": 80.52,
       "branch": 80.77
     },
+    "baseline": {
+      "line": 68.88,
+      "branch": 65.62
+    },
     "prompted": true,
     "size": null
   },
@@ -99,6 +111,10 @@
     "target": {
       "line": 80.97,
       "branch": 80.87
+    },
+    "baseline": {
+      "line": 71.49,
+      "branch": 68.26
     },
     "prompted": true,
     "size": null
@@ -126,6 +142,10 @@
       "line": 70.75,
       "branch": 68.97
     },
+    "baseline": {
+      "line": 65.82,
+      "branch": 63.17
+    },
     "prompted": true,
     "size": null
   },
@@ -151,6 +171,10 @@
     "target": {
       "line": 58.13,
       "branch": 50.97
+    },
+    "baseline": {
+      "line": 55.14,
+      "branch": 57.24
     },
     "prompted": true,
     "size": 7.0
@@ -178,6 +202,10 @@
       "line": 54.63,
       "branch": 51.58
     },
+    "baseline": {
+      "line": 58.66,
+      "branch": 56.26
+    },
     "prompted": true,
     "size": 13.0
   },
@@ -203,6 +231,10 @@
     "target": {
       "line": 59.48,
       "branch": 59.77
+    },
+    "baseline": {
+      "line": 59.77,
+      "branch": 57.48
     },
     "prompted": true,
     "size": 34.0
@@ -230,6 +262,10 @@
       "line": 60.22,
       "branch": 58.39
     },
+    "baseline": {
+      "line": 60.82,
+      "branch": 58.70
+    },
     "prompted": true,
     "size": 8.0
   },
@@ -255,6 +291,10 @@
     "target": {
       "line": 62.91,
       "branch": 57.99
+    },
+    "baseline": {
+      "line": 57.99,
+      "branch": 55.04
     },
     "prompted": true,
     "size": 7.0
@@ -282,6 +322,10 @@
       "line": 64.40,
       "branch": 64.19
     },
+    "baseline": {
+      "line": 66.79,
+      "branch": 64.60
+    },
     "prompted": true,
     "size": 15.0
   },
@@ -307,6 +351,10 @@
     "target": {
       "line": 58.81,
       "branch": 54.22
+    },
+    "baseline": {
+      "line": 56.12,
+      "branch": 53.41
     },
     "prompted": true,
     "size": 1.3
@@ -334,8 +382,42 @@
       "line": 66.43,
       "branch": 59.21
     },
+    "baseline": {
+      "line": 61.79,
+      "branch": 59.21
+    },
     "prompted": true,
-    "size": 1.3
+    "size": 6.7
+  },
+  "DeepSeek-Coder-33B-instruct": {
+    "link": "https://huggingface.co/deepseek-ai/deepseek-coder-33b-instruct",
+    "open-data": "NONE",
+    "overall": {
+      "line": 94.86,
+      "branch": 91.92
+    },
+    "overall@k": {
+      "line": {
+        "1": 85.47,
+        "2": 87.38,
+        "5": 90.30
+      },
+      "branch": {
+        "1": 78.49,
+        "2": 81.23,
+        "5": 85.12
+      }
+    },
+    "target": {
+      "line": 70.52,
+      "branch": 68.46
+    },
+    "baseline": {
+      "line": 66.43,
+      "branch": 59.21
+    },
+    "prompted": true,
+    "size": 33
   },
   "CodeQwen1.5-7B-Chat": {
     "link": "https://huggingface.co/Qwen/CodeQwen1.5-7B-Chat",
@@ -359,6 +441,40 @@
     "target": {
       "line": 65.60,
       "branch": 65.82
+    },
+    "baseline": {
+      "line": 61.79,
+      "branch": 65.31
+    },
+    "prompted": true,
+    "size": 7
+  },
+  "Mistral-7B-Instruct-v0.2": {
+    "link": "https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2",
+    "open-data": "NONE",
+    "overall": {
+      "line": 60.59,
+      "branch": 57.73
+    },
+    "overall@k": {
+      "line": {
+        "1": 53.69,
+        "2": 55.72,
+        "5": 57.44
+      },
+      "branch": {
+        "1": 48.14,
+        "2": 50.92,
+        "5": 53.37
+      }
+    },
+    "target": {
+      "line": 45.60,
+      "branch": 46.90
+    },
+    "baseline": {
+      "line": 28.66,
+      "branch": 26.45
     },
     "prompted": true,
     "size": 7
