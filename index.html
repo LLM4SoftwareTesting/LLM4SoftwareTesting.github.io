@@ -123,6 +123,18 @@
         <input type="radio" class="btn-check" name="btnradio" id="Target"/>
         <label class="btn btn-outline-primary" for="Target">Target</label>
       </div>
+      <div class="container">
+        <div class="d-flex justify-content-end">
+          <div class="btn-group btn-group-sm" role="group" id="Granularity">
+            <input type="radio" class="btn-check" name="btnradio2" id="LineCov" checked/>
+            <label class="btn btn-outline-secondary" for="LineCov">Line</label>
+            <input type="radio" class="btn-check" name="btnradio2" id="BranchCov"/>
+            <label class="btn btn-outline-secondary" for="BranchCov">Branch</label>
+            <input type="radio" class="btn-check" name="btnradio2" id="PathCov"/>
+            <label class="btn btn-outline-secondary" for="PathCov">Path</label>
+          </div>
+        </div>
+      </div>
       <div id="chart" style="width: 100%; height: 600px"></div>
       <div class="container-fluid d-flex flex-row flex-nowrap">
         <div class="container-fluid d-flex flex-column align-items-center">
@@ -238,8 +250,11 @@
       const lineTable = document.getElementById("line");
       const branchTable = document.getElementById("branch");
       const benchmarkRadio = document.getElementById("Benchmark");
+      const granularityRadio = document.getElementById("Granularity");
       const chartDom = document.getElementById("chart");
       var chart = echarts.init(chartDom);
+
+      let task = "overall";
 
       const dataUrl = "results.json";
 
@@ -558,6 +573,7 @@
         });
 
         chartOption.xAxis.data = sizeList;
+        chartOption.yAxis.name = task + ' ' + chartOption.yAxis.name;
         chartOption.yAxis.max =
                 1 + Math.max(...data.map((model) => model[type][score]));
 
@@ -629,20 +645,36 @@
       const overallRadio = document.getElementById("Overall");
       const targetRadio = document.getElementById("Target");
 
+      const lineRadio = document.getElementById("LineCov");
+      const branchRadio = document.getElementById("BranchCov");
+      const pathRadio = document.getElementById("PathCov");
+
       overallRadio.addEventListener("click", function () {
+        task = "overall";
         clearTable();
         displayTable(lineTable, "overall", "line");
         displayTable(branchTable, "overall", "branch");
-        clearChart();
-        displayChart("overall", "branch");
+        lineRadio.click();
+        pathRadio.disabled = true;
       });
 
       targetRadio.addEventListener("click", function () {
+        task = "target";
         clearTable();
         displayTable(lineTable, "target", "line");
         displayTable(branchTable, "target", "branch");
+        lineRadio.click();
+        pathRadio.disabled = false;
+      });
+
+      lineRadio.addEventListener("click", function () {
         clearChart();
-        displayChart("target", "branch");
+        displayChart(task, "line");
+      });
+
+      branchRadio.addEventListener("click", function () {
+        clearChart();
+        displayChart(task, "branch");
       });
 
       overallRadio.click();
