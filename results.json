@@ -1,0 +1,366 @@
+{
+  "GPT-3.5-Turbo (Nov 2023)": {
+    "link": "https://openai.com/blog/new-models-and-developer-products-announced-at-devday",
+    "open-data": "NONE",
+    "overall": {
+      "line": 96.27,
+      "branch": 93.65
+    },
+    "overall@k": {
+      "line": {
+        "1": 88.35,
+        "2": 90.02,
+        "5": 92.14
+      },
+      "branch": {
+        "1": 81.87,
+        "2": 84.32,
+        "5": 87.55
+      }
+    },
+    "target": {
+      "line": 67.76,
+      "branch": 70.40
+    },
+    "prompted": true,
+    "size": null
+  },
+  "GPT-4 (May 2023)": {
+    "link": "https://openai.com/research/gpt-4",
+    "open-data": "NONE",
+    "overall": {
+      "line": 94.94,
+      "branch": 92.81
+    },
+    "overall@k": {
+      "line": {
+        "1": 85.65,
+        "2": 87.77,
+        "5": 90.14
+      },
+      "branch": {
+        "1": 78.89,
+        "2": 81.93,
+        "5": 85.39
+      }
+    },
+    "target": {
+      "line": 78.20,
+      "branch": 78.23
+    },
+    "prompted": true,
+    "size": null
+  },
+  "GPT-4-Turbo (April 2024)": {
+    "link": "https://openai.com/blog/new-models-and-developer-products-announced-at-devday",
+    "open-data": "NONE",
+    "overall": {
+      "line": 96.08,
+      "branch": 94.81
+    },
+    "overall@k": {
+      "line": {
+        "1": 85.46,
+        "2": 87.87,
+        "5": 90.81
+      },
+      "branch": {
+        "1": 78.62,
+        "2": 82.06,
+        "5": 86.64
+      }
+    },
+    "target": {
+      "line": 80.52,
+      "branch": 80.77
+    },
+    "prompted": true,
+    "size": null
+  },
+  "GPT-4o (May 2024)": {
+    "link": "https://openai.com/blog/new-models-and-developer-products-announced-at-devday",
+    "open-data": "NONE",
+    "overall": {
+      "line": 98.65,
+      "branch": 97.16
+    },
+    "overall@k": {
+      "line": {
+        "1": 90.23,
+        "2": 92.16,
+        "5": 94.33
+      },
+      "branch": {
+        "1": 84.05,
+        "2": 86.89,
+        "5": 90.31
+      }
+    },
+    "target": {
+      "line": 80.97,
+      "branch": 80.87
+    },
+    "prompted": true,
+    "size": null
+  },
+  "Gemini Pro 1.0": {
+    "link": "https://deepmind.google/technologies/gemini/",
+    "open-data": "NONE",
+    "overall": {
+      "line": 93.01,
+      "branch": 90.66
+    },
+    "overall@k": {
+      "line": {
+        "1": 84.48,
+        "2": 86.60,
+        "5": 88.47
+      },
+      "branch": {
+        "1": 78.35,
+        "2": 81.29,
+        "5": 84.11
+      }
+    },
+    "target": {
+      "line": 70.75,
+      "branch": 68.97
+    },
+    "prompted": true,
+    "size": null
+  },
+  "CodeLlama-7B": {
+    "link": "https://about.fb.com/news/2023/08/code-llama-ai-for-coding/amp/",
+    "open-data": "NONE",
+    "overall": {
+      "line": 86.09,
+      "branch": 81.56
+    },
+    "overall@k": {
+      "line": {
+        "1": 79.46,
+        "2": 80.72,
+        "5": 82.04
+      },
+      "branch": {
+        "1": 72.28,
+        "2": 73.96,
+        "5": 75.90
+      }
+    },
+    "target": {
+      "line": 58.13,
+      "branch": 50.97
+    },
+    "prompted": true,
+    "size": 7.0
+  },
+  "CodeLlama-13B": {
+    "link": "https://about.fb.com/news/2023/08/code-llama-ai-for-coding/amp/",
+    "open-data": "NONE",
+    "overall": {
+      "line": 85.66,
+      "branch": 80.55
+    },
+    "overall@k": {
+      "line": {
+        "1": 80.49,
+        "2": 82.26,
+        "5": 83.44
+      },
+      "branch": {
+        "1": 73.21,
+        "2": 75.54,
+        "5": 77.13
+      }
+    },
+    "target": {
+      "line": 54.63,
+      "branch": 51.58
+    },
+    "prompted": true,
+    "size": 13.0
+  },
+  "CodeLlama-34B": {
+    "link": "https://about.fb.com/news/2023/08/code-llama-ai-for-coding/amp/",
+    "open-data": "NONE",
+    "overall": {
+      "line": 87.96,
+      "branch": 83.74
+    },
+    "overall@k": {
+      "line": {
+        "1": 78.83,
+        "2": 81.25,
+        "5": 83.71
+      },
+      "branch": {
+        "1": 71.37,
+        "2": 74.50,
+        "5": 77.80
+      }
+    },
+    "target": {
+      "line": 59.48,
+      "branch": 59.77
+    },
+    "prompted": true,
+    "size": 34.0
+  },
+  "Llama3-8B": {
+    "link": "https://huggingface.co/meta-llama/Meta-Llama-3-8B",
+    "open-data": "NONE",
+    "overall": {
+      "line": 90.98,
+      "branch": 89.02
+    },
+    "overall@k": {
+      "line": {
+        "1": 77.40,
+        "2": 80.08,
+        "5": 84.42
+      },
+      "branch": {
+        "1": 69.47,
+        "2": 73.37,
+        "5": 79.22
+      }
+    },
+    "target": {
+      "line": 60.22,
+      "branch": 58.39
+    },
+    "prompted": true,
+    "size": 8.0
+  },
+  "codegemma-7b": {
+    "link": "https://huggingface.co/google/codegemma-7b",
+    "open-data": "NONE",
+    "overall": {
+      "line": 93.16,
+      "branch": 91.46
+    },
+    "overall@k": {
+      "line": {
+        "1": 76.23,
+        "2": 80.54,
+        "5": 85.90
+      },
+      "branch": {
+        "1": 67.15,
+        "2": 72.94,
+        "5": 90.29
+      }
+    },
+    "target": {
+      "line": 62.91,
+      "branch": 57.99
+    },
+    "prompted": true,
+    "size": 7.0
+  },
+  "starcoder2-15b-instruct-v0.1": {
+    "link": "https://huggingface.co/bigcode/starcoder2-15b-instruct-v0.1",
+    "open-data": "Full",
+    "overall": {
+      "line": 89.84,
+      "branch": 84.41
+    },
+    "overall@k": {
+      "line": {
+        "1": 88.03,
+        "2": 88.22,
+        "5": 88.50
+      },
+      "branch": {
+        "1": 81.80,
+        "2": 82.09,
+        "5": 82.50
+      }
+    },
+    "target": {
+      "line": 64.40,
+      "branch": 64.19
+    },
+    "prompted": true,
+    "size": 15.0
+  },
+  "DeepSeek-Coder-1.3B-instruct": {
+    "link": "https://huggingface.co/deepseek-ai/deepseek-coder-1.3b-instruct",
+    "open-data": "NONE",
+    "overall": {
+      "line": 81.22,
+      "branch": 75.99
+    },
+    "overall@k": {
+      "line": {
+        "1": 75.89,
+        "2": 76.50,
+        "5": 77.09
+      },
+      "branch": {
+        "1": 69.06,
+        "2": 69.90,
+        "5": 70.70
+      }
+    },
+    "target": {
+      "line": 58.81,
+      "branch": 54.22
+    },
+    "prompted": true,
+    "size": 1.3
+  },
+  "DeepSeek-Coder-6.7B-instruct": {
+    "link": "https://huggingface.co/deepseek-ai/deepseek-coder-6.7b-instruct",
+    "open-data": "NONE",
+    "overall": {
+      "line": 93.48,
+      "branch": 91.61
+    },
+    "overall@k": {
+      "line": {
+        "1": 82.40,
+        "2": 84.74,
+        "5": 87.97
+      },
+      "branch": {
+        "1": 75.29,
+        "2": 78.73,
+        "5": 83.46
+      }
+    },
+    "target": {
+      "line": 66.43,
+      "branch": 59.21
+    },
+    "prompted": true,
+    "size": 1.3
+  },
+  "CodeQwen1.5-7B-Chat": {
+    "link": "https://huggingface.co/Qwen/CodeQwen1.5-7B-Chat",
+    "open-data": "NONE",
+    "overall": {
+      "line": 90.73,
+      "branch": 86.90
+    },
+    "overall@k": {
+      "line": {
+        "1": 84.53,
+        "2": 85.33,
+        "5": 86.71
+      },
+      "branch": {
+        "1": 77.66,
+        "2": 78.94,
+        "5": 80.95
+      }
+    },
+    "target": {
+      "line": 65.60,
+      "branch": 65.82
+    },
+    "prompted": true,
+    "size": 7
+  }
+}
