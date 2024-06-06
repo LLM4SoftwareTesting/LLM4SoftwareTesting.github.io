@@ -573,7 +573,7 @@
         });
 
         chartOption.xAxis.data = sizeList;
-        chartOption.yAxis.name = task + ' ' + chartOption.yAxis.name;
+        chartOption.yAxis.name = task + " " + "coverage (greedy decoding)";
         chartOption.yAxis.max =
                 1 + Math.max(...data.map((model) => model[type][score]));
 
