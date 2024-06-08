@@ -309,9 +309,6 @@
       };
 
       var chartOption = {
-        legend: {
-          data: ["overall*"],
-        },
         grid: {
           left: "1%",
           right: "4%",
@@ -343,18 +340,19 @@
             },
           },
         },
-        // legend: {
-        //   data: ["base", "instructed"],
-        //   itemStyle: {
-        //     opacity: 1.0,
-        //   },
-        // },
-        // tooltip: {
-        //   trigger: "item",
-        //   axisPointer: {
-        //     type: "cross",
-        //   },
-        // },
+        legend: {
+          data: ["instructed"],
+          itemStyle: {
+            opacity: 1.0,
+          },
+          selectedMode: false  // disable click
+        },
+        tooltip: {
+          trigger: "item",
+          axisPointer: {
+            type: "cross",
+          },
+        },
         series: [
           {
             name: "base",
@@ -419,9 +417,9 @@
           table.style.fontSize = "75%";
         }
         else {
-          table.style.fontSize = "75%";
+          table.style.fontSize = "60%";
         }
-        let theaders = ["Model", "Target Coverage"];
+        let theaders = ["Model", "Target Coverage (Baseline)"];
         let subTheaders = ["k=1", "k=2", "k=5"];
         if (type !== "target") {
           theaders = ["Model", "Overall", "Coverage@k"]
@@ -543,8 +541,11 @@
               passCell.classList.add("text-danger");
             } else if (table == branchTable) {
               passCell.classList.add("text-success");
+            } else if (table.id === 'path') {
+              passCell.classList.add("text-warning");
             }
             passCell.textContent += row[type][score];
+            passCell.textContent += ' (' + (row[type][score]- row['baseline'][score]).toFixed(2) + ')';
             dataRow.appendChild(passCell);
           }
           tbody.appendChild(dataRow);
@@ -573,7 +574,8 @@
         });
 
         chartOption.xAxis.data = sizeList;
-        chartOption.yAxis.name = task + " " + "coverage (greedy decoding)";
+        chartOption.yAxis.name = task.charAt(0).toUpperCase() + task.slice(1) + " " + "Coverage (%)";
+        chartOption.yAxis.min = Math.floor(Math.min(...data.map((model) => model[type][score])) / 10) * 10 - 10;
         chartOption.yAxis.max =
                 1 + Math.max(...data.map((model) => model[type][score]));
 
