@@ -170,18 +170,18 @@
         <h3>🙋 How to interpret the results?</h3>
         <div class="inline-block mt-3">
           <ol id="note-list">
-<!--            <li>-->
-<!--              Overall coverage denotes the line/branch coverage by generating N test cases.-->
-<!--            </li>-->
-<!--            <li>-->
-<!--              Coverage@k denotes the line/branch coverage by using only k out of N test cases.-->
-<!--            </li>-->
-<!--            <li>-->
-<!--              Target line/branch/path coverage denotes the accuracy of covering specific line/branch/path by instruction.-->
-<!--            </li>-->
-<!--            <li>-->
-<!--              Baseline in denotes the accuracy of covering specific line/branch/path without instruction.-->
-<!--            </li>-->
+            <li>
+              Overall coverage denotes the line/branch coverage by generating N test cases.
+            </li>
+            <li>
+              Coverage@k denotes the line/branch coverage by using only k out of N test cases.
+            </li>
+            <li>
+              Target line/branch/path coverage denotes the accuracy of covering specific line/branch/path by instruction.
+            </li>
+            <li>
+              Baseline denotes the accuracy of covering specific line/branch/path without instruction.
+            </li>
             <li>
               "Size" here is the amount of activated model weight during
               inference.
@@ -697,14 +697,6 @@
         if (pathTableContainer) {
           pathTableContainer.remove();
         }
-        const list = document.getElementById('note-list');
-        const explanations = ["Overall coverage denotes the line/branch coverage by generating N test cases.",
-                  "Coverage@k denotes the line/branch coverage by using only k out of N test cases."]
-        explanations.forEach(explanation => {
-          const listItem = document.createElement('li');
-          listItem.textContent = explanation;
-          list.insertBefore(listItem, list.firstChild);
-        });
         task = "overall";
         clearTable();
         displayTable(lineTable, "overall", "line");
@@ -715,14 +707,6 @@
 
       targetRadio.addEventListener("click", function () {
         const pathTable = createPathTable();
-        const list = document.getElementById('note-list');
-        const explanations = ["Target line/branch/path coverage denotes the accuracy of covering specific line/branch/path by instruction.",
-          "Baseline in denotes the accuracy of covering specific line/branch/path without instruction."]
-        explanations.forEach(explanation => {
-          const listItem = document.createElement('li');
-          listItem.textContent = explanation;
-          list.insertBefore(listItem, list.firstChild);
-        });
         task = "target";
         clearTable();
         displayTable(lineTable, "target", "line");
