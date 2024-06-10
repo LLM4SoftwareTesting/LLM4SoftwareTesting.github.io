@@ -287,8 +287,8 @@
     "prompted": true,
     "size": 8.0
   },
-  "codegemma-7b": {
-    "link": "https://huggingface.co/google/codegemma-7b",
+  "gemma-1.1-7b-it": {
+    "link": "https://huggingface.co/google/gemma-1.1-7b-it",
     "open-data": "NONE",
     "overall": {
       "line": 93.16,
