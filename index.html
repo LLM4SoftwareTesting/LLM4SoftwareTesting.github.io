@@ -97,12 +97,21 @@
       id="content"
       class="container-fluid d-flex flex-column align-items-center gap-3"
     >
-      <h1 class="text-nowrap mt-5">🏆 TestEval Leaderboard 🏆</h1>
-      <h3 class="fw-light text-nowrap">
-        <small id="warning"
-          >Can AI coder generate useful test suites?<br
-        /></small>
-      </h3>
+      <h1 class="text-center mt-5"><span style="font-variant: small-caps;">TestEval</span>: Benchmarking Large Language Models for Test Case Generation</h1>
+      <div style="margin: 6px">
+      <h5 class="fw-normal text-center" style="line-height: 1.5">
+<!--        <small id="warning"-->
+<!--          >Can AI coder generate useful test suites?<br-->
+<!--        /></small>-->
+        Wenhan Wang<sup>1*</sup>, Chenyuan Yang<sup>2*</sup>, Zhijie Wang<sup>1*</sup>, Yuheng Huang<sup>3</sup>, Zhaoyang Chu<sup>4</sup>,<br>
+        Da Song<sup>1</sup>, Lingming Zhang<sup>2</sup>, An Ran Chen<sup>1</sup>, Lei Ma<sup>3, 1</sup>
+      </h5>
+      <h6 class="fw-light text-center" style="line-height: 1.5">
+        <sup>1</sup>University of Alberta, <sup>2</sup>University of Illinois Urbana-Champaign,
+        <sup>3</sup>The University of Tokyo, <br>
+        <sup>4</sup>Huazhong University of Science and Technology
+      </h6>
+      </div>
       <div class="d-flex flex-row justify-content-center gap-3">
         <a target="_blank" href="https://github.com/LLM4SoftwareTesting/TestEval"
           ><img
@@ -110,12 +119,15 @@
             alt="github"
             class="img-fluid"
         /></a>
-        <a target="_blank" href="https://arxiv.org"
+        <a target="_blank" href="https://arxiv.org/abs/2406.04531"
           ><img
             src="https://img.shields.io/badge/Paper-ArXiv'24-a55fed.svg?style=for-the-badge"
             alt="paper"
             class="img-fluid"
         /></a>
+      </div>
+      <div style="margin: 10px">
+        <h3>🏆 Leaderboard</h3>
       </div>
       <div class="btn-group" role="group" id="Benchmark">
         <input type="radio" class="btn-check" name="btnradio" id="Overall" checked/>
@@ -155,19 +167,24 @@
         </div>
       </div>
       <div id="notes">
-        <h3>📝 Notes</h3>
+        <h3>🙋 How to interpret the results?</h3>
         <div class="inline-block mt-3">
-          <ol>
+          <ol id="note-list">
+<!--            <li>-->
+<!--              Overall coverage denotes the line/branch coverage by generating N test cases.-->
+<!--            </li>-->
+<!--            <li>-->
+<!--              Coverage@k denotes the line/branch coverage by using only k out of N test cases.-->
+<!--            </li>-->
+<!--            <li>-->
+<!--              Target line/branch/path coverage denotes the accuracy of covering specific line/branch/path by instruction.-->
+<!--            </li>-->
+<!--            <li>-->
+<!--              Baseline in denotes the accuracy of covering specific line/branch/path without instruction.-->
+<!--            </li>-->
             <li>
-              Website template was borrowed from
-              <a target="_blank" href="https://github.com/evalplus/evalplus.github.io"
-                >EvalPlus</a
-              >.
-            </li>
-            <li>
-              Model providers have the responsibility to avoid data
-              contamination. Models trained on close data can be affected by
-              contamination.
+              "Size" here is the amount of activated model weight during
+              inference.
             </li>
             <li>
               💚 means open weights and open data. 💙 means open weights and
@@ -175,12 +192,18 @@
               imply? 💚💙 models open-source the data such that one can
               concretely reason about contamination.
             </li>
-            <li>
-              "Size" here is the amount of activated model weight during
-              inference.
-            </li>
           </ol>
         </div>
+      </div>
+      <div>
+        <h3>📖 BibTeX</h3>
+      </div>
+      <div style="font-size: 1em; text-align: left; width: 80%; background-color: #F6F5F2; padding: 20px; border-radius: 10px;">
+      <pre style="white-space: pre-wrap;">@article{wang2024testeval,<br> title={TESTEVAL: Benchmarking Large Language Models for Test Case Generation},<br> author={Wenhan Wang and Chenyuan Yang and Zhijie Wang and Yuheng Huang and Zhaoyang Chu<br> and Da Song and Lingming Zhang and An Ran Chen and Lei Ma},<br> journal={arXiv preprint arXiv:2406.04531},<br> year={2024}<br>}</pre>
+      </div>
+      <div style="margin: 10px">
+        <footer>The website template was borrowed from <a target="_blank" href="https://github.com/evalplus/evalplus.github.io">EvalPlus</a>.
+        </footer>
       </div>
 <!--      <div id="notes">-->
 <!--        <h3>🤗 More Leaderboards</h3>-->
@@ -422,7 +445,7 @@
         let theaders = ["Model", "Target Coverage (Baseline)"];
         let subTheaders = ["k=1", "k=2", "k=5"];
         if (type !== "target") {
-          theaders = ["Model", "Overall", "Coverage@k"]
+          theaders = ["Model", "Overall (N=20)", "Coverage@k"]
         }
         // filter out Null
         data = globalData
@@ -674,6 +697,14 @@
         if (pathTableContainer) {
           pathTableContainer.remove();
         }
+        const list = document.getElementById('note-list');
+        const explanations = ["Overall coverage denotes the line/branch coverage by generating N test cases.",
+                  "Coverage@k denotes the line/branch coverage by using only k out of N test cases."]
+        explanations.forEach(explanation => {
+          const listItem = document.createElement('li');
+          listItem.textContent = explanation;
+          list.insertBefore(listItem, list.firstChild);
+        });
         task = "overall";
         clearTable();
         displayTable(lineTable, "overall", "line");
@@ -684,6 +715,14 @@
 
       targetRadio.addEventListener("click", function () {
         const pathTable = createPathTable();
+        const list = document.getElementById('note-list');
+        const explanations = ["Target line/branch/path coverage denotes the accuracy of covering specific line/branch/path by instruction.",
+          "Baseline in denotes the accuracy of covering specific line/branch/path without instruction."]
+        explanations.forEach(explanation => {
+          const listItem = document.createElement('li');
+          listItem.textContent = explanation;
+          list.insertBefore(listItem, list.firstChild);
+        });
         task = "target";
         clearTable();
         displayTable(lineTable, "target", "line");
