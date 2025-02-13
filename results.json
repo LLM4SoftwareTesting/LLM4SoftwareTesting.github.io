@@ -96,7 +96,7 @@
     "size": null
   },
   "GPT-4o (May 2024)": {
-    "link": "https://openai.com/blog/new-models-and-developer-products-announced-at-devday",
+    "link": "https://openai.com/index/hello-gpt-4o/",
     "open-data": "NONE",
     "overall": {
       "line": 98.65,
@@ -123,6 +123,38 @@
       "line": 71.49,
       "branch": 68.26,
       "path": 58.43
+    },
+    "prompted": true,
+    "size": null
+  },
+  "GPT-4o-mini (May 2024)": {
+    "link": "https://openai.com/index/hello-gpt-4o/",
+    "open-data": "NONE",
+    "overall": {
+      "line": 98.76,
+      "branch": 97.58
+    },
+    "overall@k": {
+      "line": {
+        "1": 88.06,
+        "2": 90.33,
+        "5": 93.51
+      },
+      "branch": {
+        "1": 81.64,
+        "2": 85.03,
+        "5": 89.60
+      }
+    },
+    "target": {
+      "line": 76.94,
+      "branch": 78.13,
+      "path": 51.87
+    },
+    "baseline": {
+      "line": 68.21,
+      "branch": 66.12,
+      "path": 54.45
     },
     "prompted": true,
     "size": null
